@@ -1,0 +1,59 @@
+{
+  "module": {
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
+      }
+    ],
+    "name": "entry",  // 模块的名称
+    "type": "entry",  // 模块的类型，通常表示这是应用的入口模块
+    "description": "$string:module_desc",  // 模块的描述，使用字符串资源
+
+    "mainElement": "EntryAbility",  // 指定模块的主能力，通常是应用启动时的入口点
+
+    "deviceTypes": [  // 支持的设备类型
+      "phone",  // 手机
+      "tablet",  // 平板
+      "2in1"  // 二合一设备
+    ],
+    "deliveryWithInstall": true,  // 是否随应用安装一起交付
+    "installationFree": false,  // 是否需要安装，false表示需要安装
+    "pages": "$profile:main_pages",  // 模块中的页面，指向页面配置资源
+    "abilities": [  // 定义模块的主要能力
+      {
+        "name": "EntryAbility",  // 能力名称
+        "srcEntry": "./ets/entryability/EntryAbility.ets",  // 能力的入口文件路径
+        "description": "$string:EntryAbility_desc",  // 能力的描述
+        "icon": "$media:layered_image",  // 能力图标
+        "label": "$string:EntryAbility_label",  // 能力标签
+        "startWindowIcon": "$media:startIcon",  // 启动窗口图标
+        "startWindowBackground": "$color:start_window_background",  // 启动窗口背景颜色
+        "exported": true,  // 是否导出该能力
+        "skills": [  // 能力支持的技能
+          {
+            "entities": [
+              "entity.system.home"  // 支持的实体
+            ],
+            "actions": [
+              "action.system.home"  // 支持的动作
+            ]
+          }
+        ]
+      }
+    ],
+    "extensionAbilities": [  // 定义扩展能力
+      {
+        "name": "EntryBackupAbility",  // 扩展能力名称
+        "srcEntry": "./ets/entrybackupability/EntryBackupAbility.ets",  // 扩展能力入口文件路径
+        "type": "backup",  // 扩展能力类型
+        "exported": false,  // 是否导出该能力
+        "metadata": [  // 扩展能力的元数据
+          {
+            "name": "ohos.extension.backup",  // 元数据名称
+            "resource": "$profile:backup_config"  // 资源路径
+          }
+        ]
+      }
+    ]
+  }
+}

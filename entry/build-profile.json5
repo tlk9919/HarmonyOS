@@ -1,0 +1,28 @@
+{
+  "apiType": "stageMode",  // 指定 API 的类型，这里是 "stageMode"，表示构建的模式
+  "buildOption": {  // 构建时的选项，当前为空对象，表示没有额外选项
+  },
+  "buildOptionSet": [  // 定义一组构建选项
+    {
+      "name": "release",  // 构建配置的名称，例如 "release"
+      "arkOptions": {  // 与 ArkTS 相关的选项
+        "obfuscation": {  // 代码混淆相关的设置
+          "ruleOptions": {  // 具体的混淆规则选项
+            "enable": false,  // 设置为 false 表示禁用混淆
+            "files": [  // 指定混淆规则文件路径
+              "./obfuscation-rules.txt"  // 混淆规则文件
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "targets": [  // 定义构建的目标列表
+    {
+      "name": "default"  // 默认构建目标
+    },
+    {
+      "name": "ohosTest"  // 另一个构建目标，可能用于测试或其他目的
+    }
+  ]
+}
