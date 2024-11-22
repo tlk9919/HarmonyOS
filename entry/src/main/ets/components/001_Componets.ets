@@ -1,5 +1,5 @@
 @Observed//对数组属性修改
-class Task{
+export  class Task{
   static id:number=1//定义的属性是类的静态属性，它与类的所有实例共享。
   //任务名称
   name:string=`任务${Task.id++}`
@@ -22,7 +22,7 @@ function card() {
 }
 // 任务完成样式
 @Extend(Text)
-function finishedTask() {
+ function finishedTask() {
   .decoration({
     type: TextDecorationType.LineThrough//删除线
   })
@@ -104,7 +104,7 @@ Column(){
         ListItem() {
           taskItem({item:item,onTaskChange:this.handleTaskChange.bind(this)})//bind 绑定taskList
         }
-        .swipeAction({ end: this.DeleteButton(index) })
+        .swipeAction({ end: this.DeleteButton(index) })//删除按钮
 
       }
     )

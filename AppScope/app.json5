@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.example.myapplication_test",
+    "bundleName": "com.example.myapplication_test",//唯一的
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",

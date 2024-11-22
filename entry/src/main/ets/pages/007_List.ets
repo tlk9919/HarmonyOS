@@ -42,18 +42,18 @@ struct Example {
              Image(item.image)
                .width(100)
              Column({space:4}){
-               if(item.discount){
+               if(item.discount) {
                  Text(item.name)
                    .fontSize(20)
                    .fontSize(FontWeight.Bold)
-                 Text('原价： ￥'+item.price)
+                 Text('原价： ￥' + item.price)
                    .fontColor('#CCC')
                    .fontSize(14)
-                   .decoration({type:TextDecorationType.LineThrough})//表示在文本上添加一条贯穿文本的横线（通常称为“删除线”）
-                 Text('折扣价： ￥'+(item.price-item.discount))
+                   .decoration({ type: TextDecorationType.LineThrough }) //表示在文本上添加一条贯穿文本的横线（通常称为“删除线”）
+                 Text('折扣价： ￥' + (item.price - item.discount))
                    .fontColor('#F36')
                    .fontSize(18)
-                 Text('补贴： ￥'+item.discount)
+                 Text('补贴： ￥' + item.discount)
                    .fontColor('#F36')
                    .fontSize(18)
                }

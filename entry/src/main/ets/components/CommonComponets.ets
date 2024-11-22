@@ -1,32 +1,33 @@
-import { router } from "@kit.ArkUI"
 
-//自定义组件
+import router from '@ohos.router'
 @Component
 export struct Header{
-
-  private title :ResourceStr=''
-  build() {
-    Row() {
-      Image($r('app.media.back'))
+  private title: ResourceStr=''
+  // @State params: r= router.getParams()
+  build(){
+    // 标题部分
+    Row({space: 5}){
+      Image($r('app.media.ic_public_back'))
         .width(30)
-        .onClick(()=>{
-          //返回前弹窗
-          router.showAlertBeforeBackPage({
-            message:'别推退出啊，求你了'
-          })
-          //返回上一页
-          router.back()
+        .onClick(() => {
+          // 返回前的警告
+          /* router.showAlertBeforeBackPage({
+             message: '支付还未完成，确定要返回吗？'
+           })*/
 
+          // 返回上一页
+          router.back()
         })
-      Text(this.title)
-        .fontSize(30)
-        .fontWeight(FontWeight.Bold)
+      // if(this.params && this.title){
+      //   Text(this.params.id + '.' + this.title)
+      //     .fontSize(28)
+      //     .fontWeight(FontWeight.Bold)
+      // }
       Blank()
-      //Blank() 可以占据一定的空间，但本身不会渲染任何内容。它经常被用于在容器中“撑开”布局，
-      Image($r('app.media.refresh'))
+      Image($r('app.media.ic_public_refresh'))
         .width(30)
     }
-    .width('100%')
+    .width('98%')
     .height(30)
   }
 }

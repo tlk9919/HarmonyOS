@@ -1,12 +1,14 @@
 {
   "src": [
+    "pages/Index",
     "pages/013_index_router",
     "pages/Second",
     "pages/001_Example_image",
     "pages/005_Column",
     "pages/008_Custom Components",
     "pages/009_State",
-    "pages/012_Observed"
-
+    "pages/012_Observed",
+    "pages/017_DocumentListPage",
+    "pages/018_TaskManagePage"
   ]
 }
